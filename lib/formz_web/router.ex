@@ -17,6 +17,8 @@ defmodule FormzWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/new", PageController, :new
+    get "/signup/:id", PageController, :signup
   end
 
   # Other scopes may use custom stacks.

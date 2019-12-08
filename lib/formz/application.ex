@@ -6,14 +6,11 @@ defmodule Formz.Application do
   use Application
 
   def start(_type, _args) do
-    # List all child processes to be supervised
     children = [
-      # Start the Ecto repository
       Formz.Repo,
-      # Start the endpoint when the application starts
-      FormzWeb.Endpoint
-      # Starts a worker by calling: Formz.Worker.start_link(arg)
-      # {Formz.Worker, arg},
+      FormzWeb.Endpoint,
+      {Registry, keys: :unique, name: Formz.Registry},
+      Formz.SessionSupervisor
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
