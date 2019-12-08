@@ -15,7 +15,10 @@ config :formz, FormzWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "7xg7Stu4mXpdSI1R9MlB3fiZNcTZJgeu7+DLBbOhZM+y2cLat9AT6ovXozwGpClM",
   render_errors: [view: FormzWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Formz.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Formz.PubSub, adapter: Phoenix.PubSub.PG2],
+  live_view: [
+    signing_salt: "2hbvutWlGq6CSJov2umfqmO64MnaxFGT"
+  ]
 
 # Configures Elixir's Logger
 config :logger, :console,

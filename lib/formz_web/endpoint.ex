@@ -1,6 +1,8 @@
 defmodule FormzWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :formz
 
+  socket "/live", Phoenix.LiveView.Socket
+
   socket "/socket", FormzWeb.UserSocket,
     websocket: true,
     longpoll: false
